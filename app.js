@@ -15,6 +15,7 @@ const game = {
     while(keepPlaying) {  // if user choice is not = to sceretNum then keep playing
       console.log('Inside while loop')
       this.userChoice = prompt('Enter a guess between 1-100 ') 
+      this.prevGuesses.push(this.userChoice)
       
       if (this.userChoice == this.secretNum) {
         console.log('win')
@@ -23,11 +24,11 @@ const game = {
       } 
       else if (this.userChoice <= this.secretNum) {
         console.log('to low guess again')
-        alert ('To low guess again!' + this.prevGuesses)
+        alert ('To low guess again!\n Your Previous Guesses: ' + this.prevGuesses)
         console.log(this.secretNum)
       } else if (this.userChoice >= this.secretNum) {
-        console.log('to high guess again')
-        alert ('To high guess again')
+        console.log('To high guess again ')
+        alert ('To high guess again\n Your Previous Guesses: ' + this.prevGuesses)
       } 
     }
   }
